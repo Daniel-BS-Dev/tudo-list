@@ -1,0 +1,30 @@
+<section class="container-update">
+  <button class="button-cancel" (click)="cancel()">X</button>
+  <article class="content">
+    <form (ngSubmit)="updateTask()">
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="task.text"
+        class="form-control"
+      />
+      <button class="calendar">
+        <input type="datetime-local" 
+        name="date" 
+        [(ngModel)]="task.date" />
+        <span class="material-icons-outlined image"> calendar_month </span>
+      </button>
+      <input
+        type="submit"
+        value="salvar"
+        class="btn btn-primary"
+        
+      />
+    </form>
+  </article>
+</section>
+
+<!--
+[class.close]="isOpen == false"
+
+-->

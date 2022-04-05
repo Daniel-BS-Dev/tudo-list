@@ -1,0 +1,35 @@
+<section class="container-full">
+  <div class="div-menu">
+    <button (click)="onShowMenu()" [ngSwitch]="aba">
+      <span class="material-icons-outlined"> menu </span>
+      <p *ngSwitchCase="'myTasks'">Nova Tarefa</p>
+      <p *ngSwitchCase="'mark'">Tarefas Marcadas</p>
+      <p *ngSwitchDefault>Home</p>
+    </button>
+    <div class="container-watch">
+      {{ time | date: "fullDate" }}
+      <span class="material-icons-outlined"> today </span>
+    </div>
+  </div>
+  <section class="container-nav">
+    <nav class="content" [class.hideMenu]="showMenu == false">
+      <ul>
+        <li [class.active]="aba == 'home'" (click)="aba = 'home'">
+          <span class="material-icons-outlined icon-nav"> home </span>
+          <a routerLink="/" (click)="onShowMenu()">Home</a>
+        </li>
+        <li [class.active]="aba == 'myTasks'" (click)="aba = 'myTasks'">
+          <span class="material-icons-outlined icon-nav"> edit_calendar </span>
+          <a routerLink="/task/create" (click)="onShowMenu()">Nova Tarefa</a>
+        </li>
+        <li [class.active]="aba == 'mark'" (click)="aba = 'mark'">
+          <span class="material-icons-outlined"> grade </span>
+          <a routerLink="/markTask" (click)="onShowMenu()">Marcadas</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="container-route">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+</section>

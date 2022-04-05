@@ -1,0 +1,43 @@
+<section class="container-add-task">
+  <article class="content-add" [class.hide]="addTask == false">
+    <span
+      class="material-icons-outlined"
+      title="Adicione uma nova tarefa"
+      (click)="onAddTask()"
+    >
+      add
+    </span>
+    <p title="Adicione uma nova tarefa" (click)="onAddTask()">
+      Adicionar uma tarefa
+    </p>
+  </article>
+  <article class="container-add" [class.show]="addTask == false">
+    <form (ngSubmit)="newTask()">
+      <input
+        type="text"
+        class="form-control input-text"
+        name="text"
+        [(ngModel)]="task.text"
+        placeholder="Adicionar uma tarefa"
+        autofocus
+      />
+      <div class="div-buttons">
+        <div class="container-calendar">
+          <div class="calendar">
+            <input 
+            type="datetime-local" 
+            name="date"
+            [(ngModel)]="task.date"/>
+            <span class="material-icons-outlined image"> calendar_month </span>
+          </div>
+          <span class="material-icons-outlined notification">
+            notifications_active
+          </span>
+        </div>
+        <input type="submit" class="send-info" value="Adicionar" />
+      </div>
+    </form>
+  </article>
+
+  <app-view-new-task></app-view-new-task>
+</section>

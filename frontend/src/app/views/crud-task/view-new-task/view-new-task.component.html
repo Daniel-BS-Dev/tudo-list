@@ -1,0 +1,28 @@
+<section *ngIf="listTask.length > 0">
+  <article *ngFor="let task of listTask" class="container-task">
+    <div class="div-text">
+      <input type="checkbox" (click)="onIsMark(task.id!)"/>
+      <span class="text-task">{{ task.text }}</span>
+      <span class="text-task">{{ task.date | date:'short' }}</span>
+    </div>
+    <div class="div-draw">
+      <a routerLink="/task/update/{{ task.id }}"  class="edit">
+      <span
+        class="material-icons-outlined edit"
+        title="Click para editar tarefa"
+        
+      >
+        mode_edit_outline
+      </span>
+      </a>
+      <span
+        (click)="deleteTask( task.id! )"
+        class="material-icons-outlined delete"
+        title="Click para deletar tarefa"
+      >
+        delete
+      </span>
+    </div>
+  </article>
+ 
+</section>

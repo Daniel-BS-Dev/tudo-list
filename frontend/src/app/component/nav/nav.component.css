@@ -1,0 +1,206 @@
+@keyframes hideMenu {
+  0% {
+    left: 0%;
+  }
+  10% {
+    left: -5%;
+  }
+  20% {
+    left: -10%;
+  }
+  30% {
+    left: -15%;
+  }
+  40% {
+    left: -20%;
+  }
+  50% {
+    left: -25%;
+  }
+  60% {
+    left: -30%;
+  }
+  70% {
+    left: -35%;
+  }
+  80% {
+    left: -40%;
+  }
+  90% {
+    left: -40%;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .div-menu {
+    width: 100%;
+  }
+
+  .container-watch{
+    display: flex;
+    font-size: 15px;
+    font-family:'Helvetica Neue';
+    margin-left: 8px;
+  }
+
+  .container-watch span{
+   display: none;
+  }
+
+  .div-menu button {
+    margin: 5px;
+    height: 25px;
+    display: flex;
+  }
+
+  .div-menu span {
+    padding-right: 10px;
+    font-size: 30px;
+  }
+
+  .div-menu p {
+    font-size: 23px;
+    
+  }
+
+  .container-full {
+    width: 100%;
+  }
+
+  .content {
+    width: 50%;
+    min-height: calc(100vh - 100px) ;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: var(--silver);
+    z-index: 10;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 15%;
+  }
+
+  a {
+    min-width: 100%;
+    margin-left: 5px;
+  }
+
+  .active {
+    font-size: 18px;
+    font-weight: 900;
+    background: rgba(173, 216, 230, 0.3);
+  }
+
+  .hideMenu {
+    position: absolute;
+    left: -50%;
+    animation: hideMenu 0.5s ease;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .div-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container-watch{
+    display: flex;
+    font-size: 18px;
+    font-family:'Helvetica Neue';
+    margin-left: 5px;
+    align-items: center;
+  }
+
+  .div-menu p {
+    font-size: 25px;
+    margin-top: -5px;
+  }
+
+  .content {
+    width: 230px;
+  
+  }
+
+  .container-watch span{
+    display: unset;
+    margin-left: 10px;
+   }
+
+}
+
+@media screen and (min-width:992px){
+  .container-full {
+    display:block;
+    
+  }
+
+  .container-watch{
+    font-size: 20px;
+  
+  }
+
+  .container-watch span{
+    margin-left: 10px;
+  }
+
+  .div-menu button {
+    height: 30px;
+    display: flex;
+  }
+
+  .div-menu span {
+    padding-right: 15px;
+    font-size: 35px;
+  }
+
+  .div-menu p {
+    font-size: 30px;
+  }
+
+  .container-nav{
+    width: 100%;
+    display: flex;
+  }
+
+  .container-route{
+    flex: 1;
+  }
+
+  .content {
+    width: 250px;
+    min-height: calc(100vh - 120px);
+    position: relative;
+    z-index: 0;
+  }
+
+  li {
+    padding: 10%;
+    color: rgb(8, 8, 80);
+  }
+
+  a {
+    margin-left: 15px;
+  }
+
+  .active {
+    font-size: 20px;
+   
+  }
+
+  .hideMenu {
+    display: none;
+    transition: all 5s ease;
+  
+  }
+
+}
+
+
