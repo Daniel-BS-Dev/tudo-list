@@ -1,97 +1,195 @@
-@keyframes welcome {
-  25%{color:rgb(121, 11, 11);}
-  50%{color: rgb(218, 241, 7);}
-  75%{color: #fff;}
-  100%{color: #FFF;}
-}
-
-@media screen and (min-width: 320px) {
+@media screen and (min-width:320px){
   .home-container {
-    width: 100%;
-    min-height: 100vh;
-    background-image: url("http://www.flyshopbrasil.com.br/wp-content/uploads/2015/12/0138-Morice-09052015Aerial.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border: 1px solid #000;
-    
+    padding: 10px;
   }
-
+  
   .home-content {
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background: #ffffff;
+  }
+  
+  .home-logo img {
     width: 100%;
-    padding-top: 30px;
+    height: auto;
+  }
+  
+  .home-welcome {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+  
+  }
+  
+  .home-welcome h1 {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 35px;
+    text-align: center;
+   
+    color: #263238;
+    margin-top: 40px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
   }
 
-  .home-content .title {
-    width: 90%;
+  .home-welcome h1 span{
+    display: none;
+  }
+  
+  .home-welcome p {
+    font-size: 16px;
+    line-height: 22px;
     text-align: center;
-    font-size: 30px;
-    font-weight: 300;
-    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: #9e9e9e;
+    padding-bottom: 30px;
+  }
+  
+  .home-welcome button{
+    width: 95%;
+    min-height: 40px;
     text-transform: uppercase;
     font-weight: 900;
   }
 
-  .home-content .subtitle {
-    width: 95%;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 400;
-    
-  }
-
-  .home-content .title, .subtitle{
-    color: #000;
-    animation: welcome 15s ease infinite;
+  .home-welcome button:hover{
+    opacity: 0.8;
+    transform: scaleX(1.1);
+    color: #bbb;
   }
 }
 
-@media screen and (min-width: 576px) {
-  .home-container {
-    min-height: calc(100vh - 115px);
-    
+@media screen and (min-width:576px) {
+  .home-image {
+    margin-bottom: 50px;
   }
 
-  .home-content {
-    padding-top: 40px;
+  .home-logo img {
+    width: 450px;
   }
 
-  .home-content .title {
-    font-size: 40px;
-    line-height: 1.5;
-    
+  .home-welcome h1 {
+    font-size: 30px;
+    line-height: 40px;
   }
 
-  .home-content .subtitle {
-    font-size: 1.3rem;
-    font-weight: 600;
-    
+  .home-welcome p {
+    width: 350px;
+    font-size: 20px;
+    line-height: 27px;
+    padding-bottom: 30px;
+  }
+
+  .home-welcome button{
+    width: 50%;
+    min-height: 50px;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
+  .home-welcome h1 {
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: -0.015em;
+    color: #263238;
+    margin-top: 60px;
+  }
+
+  .home-welcome p {
+    width: 450px;
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .home-welcome button{
+    width: 49%;
+    min-height: 55px;
+  }
+
+}
+
+@media screen and (min-width:992px) {
   .home-container {
-    min-height: calc(100vh - 120px); 
+    padding: 20px;
+    
   }
 
   .home-content {
     align-items: flex-start;
-    padding-left: 20px;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 50px 0px 50px 50px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
   }
 
-  .home-content .title {
+  .home-logo img {
+    flex: 1;
+    height: 380px;
+  }
+
+  .home-welcome {
+    width: 40%;
+    padding: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  
+  }
+
+  .home-welcome h1 {
+    width: 90%;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: justify;
+    margin-top: 60px;
+  }
+
+  .home-welcome p {
+    width: 100%;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: justify;
+    padding-bottom: 40px;
+  }
+
+  .home-welcome button{
+    width: 80%;
+    min-height: 50px;
+  }
+ 
+}
+
+@media screen and (min-width: 1200px) {
+  .home-logo img {
+    width: 550px;
+  }
+
+  .home-welcome h1 {
+    width: 90%;
     font-size: 45px;
-    line-height: 1.2;
-    text-align: start;
+    line-height: 55px;
+    text-align: justify;
+    margin-top: 40px;
   }
 
-  .home-content .subtitle {
-    text-align: start;
-    font-size: 1.4rem;
-    font-weight: 300;
-    
+  .home-welcome p {
+    font-size: 24px;
+    line-height: 33px;
+    padding-bottom: 30px;
   }
 
+  .home-welcome button{
+    width: 80%;
+    min-height: 60px;
+  }
+ 
 }

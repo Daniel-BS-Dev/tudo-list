@@ -10,12 +10,12 @@ import { MyTask } from 'src/app/views/crud-task/models/task';
 export class ViewNewTaskComponent implements OnInit {
   task: MyTask;
   listTask: MyTask[] = [];
-  mark: number[] = [];
   
 
   constructor(private service: CrudService) {
     this.task = {
       id: 0,
+      title: 'Sem titulo',
       text: '',
       isMark: false,
     };
@@ -43,18 +43,10 @@ export class ViewNewTaskComponent implements OnInit {
   }
 
   onIsMark(id: number) {
-     if(this.mark.indexOf(id) == -1){
-       this.mark.push(id);
-       console.log("adicionei o", id)
-     }else if(this.mark.indexOf(id) != -1){
-      for(let c in this.mark){
-        console.log(id," = ", c)
-      }
-        
-     }
-
-     for(let c in this.mark){
-       console.log("Array = ", c)
-     }
+  this.listTask.forEach(x => {
+    if(id == x.id){
+      x.isMark = !x.isMark;
+    }
+  })
   }
 }

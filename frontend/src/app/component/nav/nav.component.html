@@ -1,10 +1,7 @@
 <section class="container-full">
-  <div class="div-menu">
-    <button (click)="onShowMenu()" [ngSwitch]="aba">
+  <div class="div-menu" [class.hideMenu]="hideMenu == true">
+    <button (click)="onShowMenu()">
       <span class="material-icons-outlined"> menu </span>
-      <p *ngSwitchCase="'myTasks'">Nova Tarefa</p>
-      <p *ngSwitchCase="'mark'">Tarefas Marcadas</p>
-      <p *ngSwitchDefault>Home</p>
     </button>
     <div class="container-watch">
       {{ time | date: "fullDate" }}
@@ -13,6 +10,9 @@
   </div>
   <section class="container-nav">
     <nav class="content" [class.hideMenu]="showMenu == false">
+      <div class="closeMenu">
+        <b (click)="onShowMenu()" title="Fechar menu">X</b>
+      </div>
       <ul>
         <li [class.active]="aba == 'home'" (click)="aba = 'home'">
           <span class="material-icons-outlined icon-nav"> home </span>
@@ -29,7 +29,7 @@
       </ul>
     </nav>
     <section class="container-route">
-      <router-outlet></router-outlet>
+     
     </section>
   </section>
 </section>

@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateTaskComponent implements OnInit {
   task: MyTask = {
     text: '',
+    title:'Sem Titutlo',
     isMark: false,
     date: '',
   };

@@ -1,7 +1,9 @@
 <section *ngIf="listTask.length > 0">
   <article *ngFor="let task of listTask" class="container-task">
     <div class="div-text">
+      <div *ngIf="task.isMark == true">esta marcado</div>
       <input type="checkbox" (click)="onIsMark(task.id!)"/>
+      <span class="text-task">{{ task.title }}</span>
       <span class="text-task">{{ task.text }}</span>
       <span class="text-task">{{ task.date | date:'short' }}</span>
     </div>

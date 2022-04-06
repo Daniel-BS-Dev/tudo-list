@@ -27,7 +27,7 @@
     left: -40%;
   }
   90% {
-    left: -40%;
+    left: -45%;
   }
   100% {
     left: -50%;
@@ -37,17 +37,39 @@
 @media screen and (min-width: 320px) {
   .div-menu {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .closeMenu{
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+   
+  }
+
+  .closeMenu b{
+    width: 80px;
+    text-align: center;
+    color: brown;
+    margin-right: 1px;
+    margin-top: 1px;
+  }
+
+  .closeMenu b:hover{
+    background: brown;
+    color: aliceblue;
   }
 
   .container-watch{
     display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 15px;
     font-family:'Helvetica Neue';
     margin-left: 8px;
-  }
-
-  .container-watch span{
-   display: none;
   }
 
   .div-menu button {
@@ -71,35 +93,38 @@
   }
 
   .content {
-    width: 50%;
+    width: 40%;
     min-height: calc(100vh - 100px) ;
     display: flex;
     flex-direction: column;
     position: absolute;
-    background: var(--silver);
+    background: #333;
+    box-shadow: 10px 0px 5px #000;
     z-index: 10;
   }
 
   li {
     display: flex;
     align-items: center;
-    padding: 15%;
+    padding:10% 5%;
   }
 
   a {
     min-width: 100%;
     margin-left: 5px;
+    color: white;
   }
 
   .active {
     font-size: 18px;
     font-weight: 900;
-    background: rgba(173, 216, 230, 0.3);
+    background: #000;
+    color: white;
   }
 
   .hideMenu {
     position: absolute;
-    left: -50%;
+    left: -60%;
     animation: hideMenu 0.5s ease;
   }
 }

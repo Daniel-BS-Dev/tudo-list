@@ -6,39 +6,38 @@ import { CrudService } from '../crud.service';
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
-  styleUrls: ['./add-task.component.css']
+  styleUrls: ['./add-task.component.css'],
 })
 export class AddTaskComponent implements OnInit {
-
   addTask: boolean = true;
 
   task: MyTask = {
-   text: '',
-   isMark: false,
-   date: '',
-  }
+    text: '',
+    title: '',
+    isMark: false,
+    date: '',
+  };
 
-  constructor(private service: NavService, private crudService: CrudService) {
-     
-   }
+  constructor(private service: NavService, private crudService: CrudService) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  onAddTask(){
+  onAddTask() {
     this.addTask = this.service.onShowMenu();
   }
 
   newTask(): void {
     this.crudService.newTask(this.task).subscribe(() => {
+      if (this.task.title == '') {
+        this.task = { ...this.task, title: 'Sem titulo' };
+      }
       window.location.reload();
-    })
-   this.cleanInput();
+    });
+    this.cleanInput();
   }
 
-  cleanInput(){
-    this.task.text= '';
-    this.task.date= '';
+  cleanInput() {
+    this.task.text = '';
+    this.task.date = '';
   }
 }

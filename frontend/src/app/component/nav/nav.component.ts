@@ -11,8 +11,10 @@ import { NavService } from './nav.service';
 export class NavComponent implements OnInit {
 
   showMenu: boolean = false;
+  hideMenu: boolean = false;
   aba: string = 'home';
   time = Date.now();
+  
 
   constructor(private service: NavService) {
     
@@ -24,6 +26,7 @@ export class NavComponent implements OnInit {
 
   onShowMenu(){
     this.showMenu = this.service.onShowMenu();
+    this.hideMenu = !this.hideMenu;
   }
 
 }

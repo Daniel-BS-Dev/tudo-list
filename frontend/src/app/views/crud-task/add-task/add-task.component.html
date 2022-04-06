@@ -1,5 +1,11 @@
 <section class="container-add-task">
-  <article class="content-add" [class.hide]="addTask == false">
+<app-nav></app-nav>
+
+
+
+
+  <!--
+    <article class="content-add" [class.hide]="addTask == false">
     <span
       class="material-icons-outlined"
       title="Adicione uma nova tarefa"
@@ -14,12 +20,20 @@
   <article class="container-add" [class.show]="addTask == false">
     <form (ngSubmit)="newTask()">
       <input
+      type="text"
+      class="form-control"
+      name="title"
+      [(ngModel)]="task.title"
+      placeholder="Titulo da Tarefa"
+      autofocus
+    />
+      <input
         type="text"
         class="form-control input-text"
         name="text"
         [(ngModel)]="task.text"
         placeholder="Adicionar uma tarefa"
-        autofocus
+      
       />
       <div class="div-buttons">
         <div class="container-calendar">
@@ -38,6 +52,7 @@
       </div>
     </form>
   </article>
+  -->
 
   <app-view-new-task></app-view-new-task>
 </section>
