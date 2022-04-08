@@ -1,1 +1,28 @@
-<app-nav></app-nav>
+<section *ngIf="listTask.length > 0">
+  <article class="container-marked-tasks">
+    <div class="container-title-marked-tasks"><h1>tarefas marcadas</h1></div>
+    <article *ngFor="let task of listTask">
+      <div class="content-marked-tasks">
+        <div class="container-header-marked-task">
+          <div>
+            <strong class="material-icons-outlined"> done </strong>
+          </div>
+          <b>tarefa marcada</b>
+        </div>
+        <div class="container-info-marked-tasks">
+          <h3>{{ task.title }}</h3>
+          <p>{{ task.text }}</p>
+          <div>
+            <i>{{ task.date | date: "short" }}</i>
+          </div>
+        </div>
+      </div>
+    </article>
+  </article>
+</section>
+
+<section *ngIf="listTask.length < 0">
+  <article class="container-marked-tasks">
+   <p>vazio</p>
+  </article>
+</section>

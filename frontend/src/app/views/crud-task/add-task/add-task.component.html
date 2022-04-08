@@ -1,11 +1,5 @@
-<section class="container-add-task">
-<app-nav></app-nav>
-
-
-
-
-  <!--
-    <article class="content-add" [class.hide]="addTask == false">
+<section>
+  <article class="content-add" [class.hide]="addTask == false">
     <span
       class="material-icons-outlined"
       title="Adicione uma nova tarefa"
@@ -19,40 +13,46 @@
   </article>
   <article class="container-add" [class.show]="addTask == false">
     <form (ngSubmit)="newTask()">
-      <input
-      type="text"
-      class="form-control"
-      name="title"
-      [(ngModel)]="task.title"
-      placeholder="Titulo da Tarefa"
-      autofocus
-    />
-      <input
-        type="text"
-        class="form-control input-text"
+      <div class="container-title-date">
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          [(ngModel)]="task.title"
+          placeholder="TÍTULO DA TAREFA"
+          autofocus
+        />
+        <div class="div-buttons">
+          <div class="container-calendar">
+            <div class="calendar">
+              <input
+                type="datetime-local"
+                name="date"
+                [(ngModel)]="task.date"
+              />
+              <span class="material-icons-outlined image">
+                calendar_month
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <textarea
         name="text"
         [(ngModel)]="task.text"
-        placeholder="Adicionar uma tarefa"
-      
-      />
-      <div class="div-buttons">
-        <div class="container-calendar">
-          <div class="calendar">
-            <input 
-            type="datetime-local" 
-            name="date"
-            [(ngModel)]="task.date"/>
-            <span class="material-icons-outlined image"> calendar_month </span>
-          </div>
-          <span class="material-icons-outlined notification">
-            notifications_active
-          </span>
-        </div>
-        <input type="submit" class="send-info" value="Adicionar" />
+        cols="15"
+        rows="3"
+        placeholder="ESCREVA AQUI..."
+        class="form-control input-text"
+      ></textarea>
+      <div *ngIf="isEmpty == ''" class="textarea-vazio">Esse campo é obrigatório!</div>
+      <div class="container-send-value">
+        <input
+          type="submit"
+          class="btn btn-primary button-submit"
+          value="Adicionar"
+        />
       </div>
     </form>
   </article>
-  -->
-
-  <app-view-new-task></app-view-new-task>
 </section>

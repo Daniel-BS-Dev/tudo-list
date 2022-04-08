@@ -12,7 +12,7 @@ export class NavComponent implements OnInit {
 
   showMenu: boolean = false;
   hideMenu: boolean = false;
-  aba: string = 'home';
+  aba: string = 'myTasks';
   time = Date.now();
   
 

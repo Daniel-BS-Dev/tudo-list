@@ -6,41 +6,36 @@
     justify-content: center;
     align-items: center;
     background-color: var(--black);
+  
     padding: 15px;
   }
 
-  .header-content{
+  .header-content {
     width: 100%;
     display: flex;
     color: var(--light);
   }
 
-  .header-content h1{
+  .header-content h1 {
     margin-right: 5px;
     font-size: 23px;
-   
-
   }
 
-  .header-content span{
+  .header-content span {
     font-size: 35px;
-   
   }
 
-  .header-git a{
+  .header-git a {
     height: 30px;
     display: flex;
   }
 
-  .header-git img{
+  .header-git img {
     width: 30px;
     height: auto;
-
   }
 
-
-
-  .header-git p{
+  .header-git p {
     font-size: 14px;
     color: #fff;
     padding-left: 5px;
@@ -49,15 +44,14 @@
     align-items: center;
   }
 
-  .header-git img{
+  .header-git img {
     width: 30px;
     height: auto;
-
   }
 
-  .header-git p:hover, img:hover{
+  .header-git p:hover,
+  img:hover {
     cursor: pointer;
-
   }
 }
 
@@ -66,14 +60,12 @@
     padding: 20px;
   }
 
-  .header-content h1{
+  .header-content h1 {
     font-size: 27px;
-  
   }
 
-  .header-content span{
+  .header-content span {
     font-size: 40px;
-   
   }
 }
 
@@ -82,13 +74,11 @@
     padding: 30px;
   }
 
-  .header-content h1{
+  .header-content h1 {
     font-size: 33px;
-  
   }
 
-  .header-content span{
+  .header-content span {
     font-size: 45px;
-   
   }
 }

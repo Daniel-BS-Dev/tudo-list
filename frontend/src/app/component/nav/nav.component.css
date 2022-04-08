@@ -35,6 +35,19 @@
 }
 
 @media screen and (min-width: 320px) {
+  .container-full {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .sectionFull{
+    display: table;
+    height:100% !important;
+    position: absolute;
+    margin: 0px;
+    z-index: 5;
+  }
+
   .div-menu {
     width: 100%;
     display: flex;
@@ -46,80 +59,97 @@
   .closeMenu{
     display: flex;
     justify-content: end;
-    font-size: 30px;
    
   }
 
   .closeMenu b{
-    width: 80px;
+    width: 60px;
     text-align: center;
-    color: brown;
-    margin-right: 1px;
-    margin-top: 1px;
+    font-size: 22px;
+    background: brown;
+    color: aliceblue;
+    border-top:1px solid #000;
+    border-left:1px solid #000;
+    border-bottom:1px solid #000;
+    margin: 1px;
+
   }
 
   .closeMenu b:hover{
-    background: brown;
-    color: aliceblue;
+    opacity: 0.8;
+    cursor: pointer;
   }
-
-  .container-watch{
+ 
+  .container-date{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
     font-family:'Helvetica Neue';
-    margin-left: 8px;
+  
   }
 
   .div-menu button {
     margin: 5px;
     height: 25px;
     display: flex;
+  
   }
 
   .div-menu span {
-    padding-right: 10px;
     font-size: 30px;
   }
 
-  .div-menu p {
-    font-size: 23px;
-    
-  }
-
-  .container-full {
-    width: 100%;
-  }
-
   .content {
-    width: 40%;
-    min-height: calc(100vh - 100px) ;
+    width: 55%;
+    min-height:100%;
     display: flex;
     flex-direction: column;
     position: absolute;
-    background: #333;
-    box-shadow: 10px 0px 5px #000;
+    background: #1c1c1c;
+    border-right:3px solid #000;
+    opacity: 0.9;
     z-index: 10;
+  }
+
+  .div-date-menu{
+    display: none;
+    
+    
   }
 
   li {
     display: flex;
     align-items: center;
     padding:10% 5%;
+
+  }
+  li a, b{
+    color: #f5f2f2;
   }
 
   a {
     min-width: 100%;
     margin-left: 5px;
-    color: white;
+    margin-top: 5px;
+    text-transform: uppercase;
+    
+    
   }
 
   .active {
     font-size: 18px;
     font-weight: 900;
-    background: #000;
-    color: white;
+    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #000;
+    background: aliceblue;
+    
+  }
+
+  li.active a,
+  li.active b{
+    color: black;
   }
 
   .hideMenu {
@@ -130,102 +160,114 @@
 }
 
 @media screen and (min-width: 576px) {
-  .div-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .container-watch{
-    display: flex;
-    font-size: 18px;
-    font-family:'Helvetica Neue';
-    margin-left: 5px;
-    align-items: center;
-  }
-
-  .div-menu p {
-    font-size: 25px;
-    margin-top: -5px;
-  }
-
-  .content {
-    width: 230px;
-  
-  }
-
-  .container-watch span{
-    display: unset;
-    margin-left: 10px;
-   }
-
-}
-
-@media screen and (min-width:992px){
   .container-full {
-    display:block;
-    
+    width: 98%;
+   
   }
 
-  .container-watch{
-    font-size: 20px;
-  
+  .closeMenu b{
+    width: 65px;
+    font-size: 25px;
   }
-
-  .container-watch span{
+ 
+  .container-date{
+    font-size: 16px;
     margin-left: 10px;
-  }
-
-  .div-menu button {
-    height: 30px;
-    display: flex;
   }
 
   .div-menu span {
-    padding-right: 15px;
     font-size: 35px;
-  }
-
-  .div-menu p {
-    font-size: 30px;
-  }
-
-  .container-nav{
-    width: 100%;
-    display: flex;
-  }
-
-  .container-route{
-    flex: 1;
+  
   }
 
   .content {
-    width: 250px;
-    min-height: calc(100vh - 120px);
-    position: relative;
-    z-index: 0;
+    width: 225px;
+
   }
 
   li {
-    padding: 10%;
-    color: rgb(8, 8, 80);
+    padding:10%;
+
   }
 
-  a {
-    margin-left: 15px;
+  li a{
+    font-size: 18px;
   }
 
   .active {
     font-size: 20px;
-   
+    
   }
 
   .hideMenu {
-    display: none;
-    transition: all 5s ease;
-  
+    left: -75%;
   }
 
 }
 
 
+@media screen and (min-width: 768px) {
+  .closeMenu b{
+    width: 70px;
+    
+  }
+ 
+  .container-date{
+    margin-left: 12px;
+  }
+
+  .hideMenu {
+    left: -85%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-full {
+    width: 250px;
+    min-height: 100% ;
+    background: #1c1c1c;
+  }
+
+  .content {
+    width: 250px !important;
+    position: relative !important;
+    z-index: unset !important;
+    top: 0 !important;
+    min-height: calc(100vh - 70px) ;
+  }
+
+  .div-date-menu{
+    display: flex;
+    justify-content: end;
+    text-transform: uppercase;
+    font-family:'Helvetica Neue';
+    font-size: 14px;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    color: #eee;
+    z-index: 11;
+    
+  }
+
+  li {
+    padding:15% 5%;
+    margin-top: 10px;
+
+  }
+
+  .closeMenu b{
+   display: none;
+  }
+
+  .div-menu {
+    display: none;
+
+  }
+
+  .hideMenu {
+    position: fixed;
+    left: 0px;
+    top: 70px;
+   
+  }
+}

@@ -9,7 +9,9 @@ import { CrudService } from '../crud.service';
   styleUrls: ['./add-task.component.css'],
 })
 export class AddTaskComponent implements OnInit {
+
   addTask: boolean = true;
+  isEmpty: string = 'a';
 
   task: MyTask = {
     text: '',
@@ -27,10 +29,17 @@ export class AddTaskComponent implements OnInit {
   }
 
   newTask(): void {
-    this.crudService.newTask(this.task).subscribe(() => {
+    this.isEmpty = this.task.text;
+    if(this.isEmpty == ''){
+      console.log('esta vazio')
+      return;
+    }
+
       if (this.task.title == '') {
-        this.task = { ...this.task, title: 'Sem titulo' };
-      }
+      this.task = { ...this.task, title: 'Sem titulo' };
+    }
+
+    this.crudService.newTask(this.task).subscribe(() => {
       window.location.reload();
     });
     this.cleanInput();

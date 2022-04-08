@@ -30,6 +30,9 @@ export class UpdateTaskComponent implements OnInit {
   }
 
   updateTask(): void {
+    if(this.task.text == ''){
+      return;
+    }
     this.service.updateTask(this.task).subscribe(() => {
       this.cancel();
     });

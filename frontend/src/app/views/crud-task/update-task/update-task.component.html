@@ -2,29 +2,39 @@
   <button class="button-cancel" (click)="cancel()">X</button>
   <article class="content">
     <form (ngSubmit)="updateTask()">
-      <input
+      <div class="div-input-date">
+        <input
         type="text"
-        name="name"
-        [(ngModel)]="task.text"
         class="form-control"
+        name="title"
+        [(ngModel)]="task.title"
+        placeholder="Título da Tarefa"
+        autofocus
       />
-      <button class="calendar">
+      <div class="calendar">
         <input type="datetime-local" 
         name="date" 
         [(ngModel)]="task.date" />
         <span class="material-icons-outlined image"> calendar_month </span>
-      </button>
+      </div>
+      </div>
+      <div class="send-value">
+        <textarea
+          name="text"
+          [(ngModel)]="task.text"
+          cols="15"
+          rows="3"
+          class="form-control input-text"
+        ></textarea>
+        <div *ngIf="task.text == ''" class="isEmpty">Esse campo não deve ser vazio!</div>
+      </div>
       <input
         type="submit"
         value="salvar"
         class="btn btn-primary"
-        
       />
     </form>
   </article>
 </section>
 
-<!--
-[class.close]="isOpen == false"
 
--->

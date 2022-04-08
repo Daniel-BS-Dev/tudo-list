@@ -1,0 +1,141 @@
+@media screen and (min-width: 320px) {
+  .container-marked-tasks {
+    margin: 0px 5px 10px 5px;
+  }
+  .container-title-marked-tasks {
+    padding: 20px 10px;
+    border-radius: 1px;
+    background: #2f4f4f;
+    box-shadow: 1px 1px 4px #000;
+    opacity: 0.9;
+  }
+
+  .container-title-marked-tasks h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #ddd;
+    margin: 0%;
+  }
+
+  .content-marked-tasks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-top: 30px;
+    background: #fff;
+    box-shadow: 1px 1px 4px #2f4f4f;
+    border: 2px solid #fff;
+    border-radius: 1px;
+  }
+
+  .container-header-marked-task {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  .container-header-marked-task div {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    margin-right: 7px;
+    border-radius: 50px;
+    background: #2f4f4f;
+  }
+
+  .container-header-marked-task div strong {
+    font-size: 16px;
+    color: #d4d4d4;
+  }
+
+  .container-header-marked-task b {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .container-info-marked-tasks {
+    padding: 8px 8px 2px 8px;
+    background: #2f4f4f;
+    color: #ddd;
+  }
+
+  .container-info-marked-tasks h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .container-info-marked-tasks p {
+    font-size: 14px;
+    margin-left: 8px;
+  }
+
+  .container-info-marked-tasks div {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    
+  }
+
+  .container-info-marked-tasks div i {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container-marked-tasks {
+    margin: 0px 25px 10px 25px;
+  }
+  .container-title-marked-tasks {
+    padding: 20px;
+  }
+  .container-title-marked-tasks h1 {
+    font-size: 25px;
+  }
+  .content-marked-tasks {
+    margin-top: 40px;
+  }
+  .container-header-marked-task {
+    padding: 10px;
+ 
+  }
+
+  .container-header-marked-task b {
+    font-size: 13px;
+
+  }
+
+  .container-info-marked-tasks {
+    padding: 12px 12px 2px 12px;
+ 
+  }
+
+  .container-info-marked-tasks h3 {
+    font-size: 17px;
+  }
+
+  .container-info-marked-tasks p {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .container-marked-tasks {
+    margin: 0px 35px 10px 35px;
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+  .container-marked-tasks {
+    margin: 0px 45px 10px 45px;
+  }
+
+}

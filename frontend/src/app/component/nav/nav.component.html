@@ -1,9 +1,9 @@
-<section class="container-full">
+<section class="container-full" [class.sectionFull]="showMenu == true">
   <div class="div-menu" [class.hideMenu]="hideMenu == true">
     <button (click)="onShowMenu()">
       <span class="material-icons-outlined"> menu </span>
     </button>
-    <div class="container-watch">
+    <div class="container-date">
       {{ time | date: "fullDate" }}
       <span class="material-icons-outlined"> today </span>
     </div>
@@ -13,23 +13,22 @@
       <div class="closeMenu">
         <b (click)="onShowMenu()" title="Fechar menu">X</b>
       </div>
+      <div class="div-date-menu">{{ time | date: "fullDate" }}</div>
       <ul>
-        <li [class.active]="aba == 'home'" (click)="aba = 'home'">
-          <span class="material-icons-outlined icon-nav"> home </span>
+        <li routerLinkActive="">
+          <b class="material-icons-outlined icon-nav"> home </b>
           <a routerLink="/" (click)="onShowMenu()">Home</a>
         </li>
-        <li [class.active]="aba == 'myTasks'" (click)="aba = 'myTasks'">
-          <span class="material-icons-outlined icon-nav"> edit_calendar </span>
+        <li routerLinkActive="active">
+          <b class="material-icons-outlined icon-nav"> edit_calendar </b>
           <a routerLink="/task/create" (click)="onShowMenu()">Nova Tarefa</a>
         </li>
-        <li [class.active]="aba == 'mark'" (click)="aba = 'mark'">
-          <span class="material-icons-outlined"> grade </span>
-          <a routerLink="/markTask" (click)="onShowMenu()">Marcadas</a>
+        <li routerLinkActive="active">
+          <b class="material-icons-outlined"> grade </b>
+          <a routerLink="/markedTask" (click)="onShowMenu()">Marcadas</a>
         </li>
       </ul>
     </nav>
-    <section class="container-route">
-     
-    </section>
+    <section class="container-route"></section>
   </section>
 </section>

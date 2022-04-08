@@ -1,0 +1,12 @@
+@media screen and (min-width:1200px) {
+    .container-view-all-marked-tasks{
+        display: flex;
+      
+    }
+
+    .container-view-all-marked-tasks article{
+      margin-top: 20px;
+      flex: 1;
+    }
+
+}

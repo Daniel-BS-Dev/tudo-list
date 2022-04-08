@@ -1,30 +1,35 @@
 <section *ngIf="listTask.length > 0">
   <article *ngFor="let task of listTask" class="container-task">
     <div class="div-text">
-      <div *ngIf="task.isMark == true">esta marcado</div>
-      <input type="checkbox" (click)="onIsMark(task.id!)"/>
-      <span class="text-task">{{ task.title }}</span>
-      <span class="text-task">{{ task.text }}</span>
-      <span class="text-task">{{ task.date | date:'short' }}</span>
+      <div class="container-button-mark">
+      <button (click)="onIsMark(task.isMark!, task.id!)" [class.button-dismark]="task.isMark == true" class="button-mark">
+        <strong class="material-icons-outlined"> done </strong>
+      </button>
+      <div *ngIf="task.isMark == false">marcar tarefa</div>
+      <div *ngIf="task.isMark == true">desmarcar tarefa</div>
     </div>
-    <div class="div-draw">
-      <a routerLink="/task/update/{{ task.id }}"  class="edit">
-      <span
-        class="material-icons-outlined edit"
-        title="Click para editar tarefa"
-        
-      >
-        mode_edit_outline
-      </span>
+     <div class="div-info-form" [class.background-green]="task.isMark == true">
+      <h3 [class.text-through]="task.isMark == true">{{ task.title }}</h3>
+      <p [class.text-through]="task.isMark == true">{{ task.text }}</p>
+      <div class="div-date"><i>{{ task.date | date: "short" }}</i></div>
+     </div>
+    </div>
+    <div class="div-buttons-delete-edit">
+      <a routerLink="/task/update/{{ task.id }}" class="edit">
+        <button
+         class="btn btn-primary"
+          title="Click para editar tarefa"
+        >
+          editar
+        </button>
       </a>
-      <span
-        (click)="deleteTask( task.id! )"
-        class="material-icons-outlined delete"
+      <button
+        (click)="deleteTask(task.id!)"
+        class="btn btn-danger"
         title="Click para deletar tarefa"
       >
         delete
-      </span>
+      </button>
     </div>
   </article>
- 
 </section>

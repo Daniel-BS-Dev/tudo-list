@@ -30,15 +30,17 @@
   }
   
   .home-welcome h1 {
+    min-width: 100%;
     font-weight: bold;
+    text-align: center;
     font-size: 26px;
     line-height: 35px;
-    text-align: center;
-   
     color: #263238;
     margin-top: 40px;
     padding-bottom: 15px;
     text-transform: uppercase;
+    
+    
   }
 
   .home-welcome h1 span{
@@ -59,12 +61,16 @@
     min-height: 40px;
     text-transform: uppercase;
     font-weight: 900;
+    background: var(--black);
+    color: #ffffff;
+    border-radius: 4px;
   }
 
   .home-welcome button:hover{
-    opacity: 0.8;
+    opacity: 1;
     transform: scaleX(1.1);
-    color: #bbb;
+    color: #eee;
+    transition: all 0.2s ease;
   }
 }
 
@@ -119,30 +125,40 @@
 
 @media screen and (min-width:992px) {
   .home-container {
+    min-height: calc(100vh - 70px);
     padding: 20px;
+  
     
   }
 
   .home-content {
+    min-height: calc(100vh - 117px);
     align-items: flex-start;
     justify-content: space-around;
     flex-direction: row;
-    padding: 50px 0px 50px 50px;
+    padding: 30px 0px 50px 50px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+    
+  }
+
+  .home-logo{
+    min-height: calc(90vh - 170px);
+    
   }
 
   .home-logo img {
     flex: 1;
-    height: 380px;
+    min-height: calc(90vh - 170px);
+    
   }
 
   .home-welcome {
-    width: 40%;
+    width: 500px;
     padding: 0px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  
+    
   }
 
   .home-welcome h1 {
@@ -162,21 +178,39 @@
   }
 
   .home-welcome button{
-    width: 80%;
+    width: 75%;
     min-height: 50px;
+    
   }
  
 }
 
 @media screen and (min-width: 1200px) {
-  .home-logo img {
-    width: 550px;
+  .home-logo {
+    flex: 1;
+    margin-left: 20px;
+  
+  }
+
+  .home-welcome {
+    width: 600px;
+    padding: 0px 50px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  
+  }
+
+  .home-logo img{
+    width: 100%;
+    height: 100%;
+    
   }
 
   .home-welcome h1 {
     width: 90%;
     font-size: 45px;
-    line-height: 55px;
+    line-height: 65px;
     text-align: justify;
     margin-top: 40px;
   }
@@ -188,8 +222,7 @@
   }
 
   .home-welcome button{
-    width: 80%;
-    min-height: 60px;
+    min-height: 55px;
   }
  
 }

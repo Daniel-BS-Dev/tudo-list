@@ -15,6 +15,8 @@ import localePT from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ViewNewTaskComponent } from './views/crud-task/view-new-task/view-new-task.component';
 import { UpdateTaskComponent } from './views/crud-task/update-task/update-task.component';
+import { ViewAddTaskComponent } from './views/crud-task/add-task/view-add-task/view-add-task.component';
+import { ViewAllMarkedTasksComponent } from './views/crud-task/mark-tasks/view-all-marked-tasks/view-all-marked-tasks.component';
 registerLocaleData(localePT);
 
 
@@ -27,7 +29,9 @@ registerLocaleData(localePT);
     AddTaskComponent,
     MarkTasksComponent,
     ViewNewTaskComponent,
-    UpdateTaskComponent
+    UpdateTaskComponent,
+    ViewAddTaskComponent,
+    ViewAllMarkedTasksComponent
  
   ],
   imports: [

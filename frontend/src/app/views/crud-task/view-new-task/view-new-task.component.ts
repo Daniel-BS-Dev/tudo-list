@@ -10,14 +10,14 @@ import { MyTask } from 'src/app/views/crud-task/models/task';
 export class ViewNewTaskComponent implements OnInit {
   task: MyTask;
   listTask: MyTask[] = [];
-  
 
   constructor(private service: CrudService) {
     this.task = {
       id: 0,
-      title: 'Sem titulo',
+      title: 'Sem título',
       text: '',
       isMark: false,
+      date: '',
     };
   }
 
@@ -42,11 +42,25 @@ export class ViewNewTaskComponent implements OnInit {
     });
   }
 
-  onIsMark(id: number) {
-  this.listTask.forEach(x => {
-    if(id == x.id){
-      x.isMark = !x.isMark;
-    }
-  })
+  onIsMark(isMark: boolean, id: number) {
+    this.listTask.forEach((x) => {
+      if (id == x.id) {
+        let mark = (x.isMark = !isMark);
+        let text = x.text;
+        let title = x.title;
+        let date = x.date;
+
+        this.task = {
+          id: id,
+          title: title,
+          text: text,
+          isMark: mark,
+          date: date,
+        };
+        this.service.updateTask(this.task).subscribe(() => {
+          console.log(this.task, id, mark);
+        });
+      }
+    });
   }
 }

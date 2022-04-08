@@ -1,124 +1,165 @@
 @media screen and (min-width: 320px) {
-  .container-add-task {
-    padding: 0px;
-  }
-
   .content-add {
     width: 100%;
     display: flex;
     padding: 15px 5px;
-    background: #f2f2f2;
+    background: #e5e5e5;
+    box-shadow: 1px 1px 4px #000;
     border-radius: 5px;
-    color: blue;
+    color: darkblue;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    opacity: 0.8;
+    
   }
 
   .content-add p {
     margin: 0px;
     padding-left: 5px;
+    text-transform: uppercase;
+
   }
 
-  .content-add p,
-  span {
+  .content-add p:hover,
+  span:hover {
     cursor: pointer;
+    opacity: 0.8;
   }
 
   .container-add {
-    background: #f2f2f2;
+    padding: 15px 5px;
+    box-shadow: 1px 1px 4px #000;
+    border: 1px solid #000;
     border-radius: 5px;
-    padding: 10px 5px;
+    background: #e5e5e5;
     display: none;
   }
 
-  .input-text {
-    border-bottom: 1px solid blue;
-  }
-
-  .container-add input::placeholder {
-    color: #000;
+  .container-title-date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   .div-buttons {
-    width: 100%;
+    width: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0px 5px;
-    margin-top: 15px;
+    margin-left: 15px;
   }
 
   .div-buttons span {
     font-size: 20px;
   }
 
-  .div-buttons span:nth-child(2) {
-    margin: 0px 15px;
-    font-size: 25px;
+  .container-calendar {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-.container-calendar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .container-calendar div,
+  .calendar input {
+    width: 100%;
+    height: 100%;
+  }
 
   .container-calendar div {
-    width: 20px;
-    height: 20px;
     margin: 10px 0px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    
   }
 
   .calendar input {
-    width: 100%;
-    height: 100%;
     position: absolute;
     z-index: 30;
-    border: none;
-    background: none;
-    opacity: 0.1;
+    opacity: 0;
   }
 
   .calendar .image {
-    font-size: 30px;
+    font-size: 35px;
+    color: #000;
   }
 
   .calendar input:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
     cursor: pointer;
   }
 
-  .send-info {
-    border: none;
-    background: none;
-    color: blue;
+  .container-send-value {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+  }
+
+  .button-submit {
+    width: 170px;
+    text-transform: uppercase;
+  }
+
+  .input-text{
+    margin-top: 20px;
+  
+  }
+
+  .textarea-vazio{
+    color: red;
   }
 }
-
 @media screen and (min-width: 576px) {
-  .container-add-task {
-    padding:5px 10px;
+  .content-add {
+    padding: 15px;
+  
+    
   }
 
-  .div-buttons span {
-    font-size: 25px;
+  .container-add {
+    padding: 15px 10px;
+    
+  }
+
+  .container-add{
+    margin: 0px;
+  }
+
+  .button-submit {
+    width: 200px;
   }
 }
-/* classe de uso externo */
 
+@media screen and (min-width: 768px) {
+  .container-add {
+    padding: 15px 15px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container-add {
+    padding: 15px 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-add {
+    padding: 15px 20px;
+  }
+}
+
+
+
+/* classe de uso externo */
 .hide {
   display: none;
 }
 
 .show {
   display: block;
+  flex: 1;
 }
 
-@media screen and (min-width: 992px) {
-  .container-add-task {
-    padding:5px 10px;
-  }
-}

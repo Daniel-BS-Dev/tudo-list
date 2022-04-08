@@ -3,10 +3,43 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 10px;
     margin-right: 10px;
-    border-bottom: 1px solid #d4d4d4;
+    margin-top: 30px;
+    background: #fff;
+    box-shadow: 1px 1px 4px #000;
+    border:1px solid #fff;
+    border-radius: 2px;
+  }
+
+  .container-button-mark{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #1c1c1c;
+  }
+
+  .button-mark{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: solid #1c1c1c;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .button-dismark{
+    background: #2F4F4F;
+    color:white;
+    
+  }
+
+  .button-mark strong{
+    font-size: 15px;
+    
   }
 
   .div-text {
@@ -14,61 +47,98 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
   }
 
-  .div-draw {
-    width: 95%;
+  .div-info-form{
+    background: var(--black);
+    color: #eee;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+    display: flex;
+    opacity: 1;
+    flex-direction: column;
+    padding: 8px 8px 2px 8px;
+    
+  }
+
+  .div-info-form h3{
+    font-size: 18px;
+    text-transform: uppercase;
+
+  }
+
+  .div-info-form p{
+    font-size: 14px;
+    margin:0px 7px;
+
+  }
+
+  .background-green{
+    background: #2F4F4F;
+  }
+
+ .div-date{
+   width: 98%;
+   display: flex;
+   justify-content: end;
+   align-items: flex-end;
+   flex: 1;
+   margin-top: 15px;
+   font-size: 12px;
+  
+ }
+
+  .div-buttons-delete-edit {
+    width: 98%;
     display: flex;
     justify-content: end;
+    padding: 10px 0px;
   }
 
-  .div-draw span:nth-child(1) {
-    margin-right: 20px;
+  .div-buttons-delete-edit button{
+    width: 90px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0.9;
   }
 
-  .edit {
-    color: darkblue;
+  .div-buttons-delete-edit button:nth-child(1) {
+    margin-right: 10px;
   }
 
-  .delete {
-    color: rgb(170, 3, 3);
-  }
 
-  .edit:hover,
-  .delete:hover {
-    opacity: 0.8;
-    transform: scaleX(1.2);
+  .div-buttons-delete-edit button:hover{
+    opacity: 1;
+    transform: scaleX(1.1);
     cursor: pointer;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .container-task {
+    justify-content: space-between;
     flex-direction: row;
-    margin-top: 30px;
+ 
   }
 
-  .div-text {
-    flex-direction: row;
-  }
-
-  .checkbox-example {
-    margin: 0px;
-    margin-right: 10px;
-  }
-
-  .text-task {
-    margin-left: 10px;
-  }
-
-  .div-draw {
-    width: 120px;
+  .div-buttons-delete-edit {
+    width: 200px;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: start;
+    padding:0px;
+    border-left:1px solid #bcbcbc;
   }
 
-  .div-draw span:nth-child(1) {
-    margin-right: 40px;
+  .div-buttons-delete-edit button{
+    width: 120px;
+    font-size: 13px;
   }
+
+  .div-buttons-delete-edit button:nth-child(1) {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+
 }
