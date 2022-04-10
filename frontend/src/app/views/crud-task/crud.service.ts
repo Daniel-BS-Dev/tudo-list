@@ -1,16 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from './../../../environments/environment';
 import { MyTask } from 'src/app/views/crud-task/models/task';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CrudService {
   
-  baseUrl = 'http://localhost:3000/tasks';
+  private readonly baseUrl = environment["urlBackend"];
+  isFalse: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+
+  showMessage(msg: string, isError: boolean = false): void{
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: isError ? ["msg-error"] : ['msg-success']
+    }) 
+  }
 
   read(): Observable<MyTask[]> {
     return this.http.get<MyTask[]>(this.baseUrl);

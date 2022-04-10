@@ -16,15 +16,15 @@
       <div class="div-date-menu">{{ time | date: "fullDate" }}</div>
       <ul>
         <li routerLinkActive="">
-          <b class="material-icons-outlined icon-nav"> home </b>
+          <i class="material-icons icons-home"> home </i>
           <a routerLink="/" (click)="onShowMenu()">Home</a>
         </li>
         <li routerLinkActive="active">
-          <b class="material-icons-outlined icon-nav"> edit_calendar </b>
+          <b class="material-icons-outlined icons-home"> edit_calendar </b>
           <a routerLink="/task/create" (click)="onShowMenu()">Nova Tarefa</a>
         </li>
         <li routerLinkActive="active">
-          <b class="material-icons-outlined"> grade </b>
+          <i class="material-icons icons-home"> star </i>
           <a routerLink="/markedTask" (click)="onShowMenu()">Marcadas</a>
         </li>
       </ul>

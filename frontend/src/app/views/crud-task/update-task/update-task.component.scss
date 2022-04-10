@@ -14,6 +14,7 @@
 
   .button-cancel {
     width: 50px;
+    height: 30px;
     color: lavender;
     background: brown;
     opacity: 0.9;
@@ -21,8 +22,10 @@
     border-radius: 2px;
     font-weight: 900;
     font-size: 25px;
-    top: 5px;
-    right: 10px;
+    top: 7px;
+    right: 5px;
+    border: 1px solid red;
+
   }
 
   .container-update,
@@ -40,6 +43,9 @@
     z-index: 20;
     border-radius: 10px;
     padding:30px 20px;
+    margin-top: 50px;
+    border:2px solid #1c1c1c;
+    box-shadow:1px 1px 5px #fff;
   }
 
   .content form {
@@ -114,10 +120,11 @@
 
   .button-cancel {
     width: 70px;
+    height: 40px;
     border-radius: 4px;
     font-size: 28px;
-    top: 10px;
-    right: 15px;
+    top: 12px;
+    right: 10px;
   }
 }
 

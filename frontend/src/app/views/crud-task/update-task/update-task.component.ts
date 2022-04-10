@@ -6,14 +6,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-update-task',
   templateUrl: './update-task.component.html',
-  styleUrls: ['./update-task.component.css'],
+  styleUrls: ['./update-task.component.scss'],
 })
 export class UpdateTaskComponent implements OnInit {
   task: MyTask = {
     text: '',
     title:'Sem Titutlo',
     isMark: false,
-    date: '',
+    date: 'Sem data',
   };
 
   constructor(
@@ -34,7 +34,8 @@ export class UpdateTaskComponent implements OnInit {
       return;
     }
     this.service.updateTask(this.task).subscribe(() => {
-      this.cancel();
+      console.log(this.service.showMessage('Tarefa Atualizada'))
+      this.cancel(); 
     });
   }
 

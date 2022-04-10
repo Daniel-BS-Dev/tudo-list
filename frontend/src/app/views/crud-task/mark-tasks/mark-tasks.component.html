@@ -2,12 +2,12 @@
   <article class="container-marked-tasks">
     <div class="container-title-marked-tasks"><h1>tarefas marcadas</h1></div>
     <article *ngFor="let task of listTask">
-      <div class="content-marked-tasks">
-        <div class="container-header-marked-task">
+      <div class="content-marked-tasks" *ngIf="task.isMark == true">
+        <div class="container-header-marked-task" (click)="onIsMark(task.isMark!, task.id!)" >
           <div>
-            <strong class="material-icons-outlined"> done </strong>
+            <strong class="material-icons-outlined dismark-task" title="Para desmarcar a tarefa click no botão"> done </strong>
           </div>
-          <b>tarefa marcada</b>
+          <b>Desmarcar Tarefa</b>
         </div>
         <div class="container-info-marked-tasks">
           <h3>{{ task.title }}</h3>
@@ -21,8 +21,8 @@
   </article>
 </section>
 
-<section *ngIf="listTask.length < 0">
-  <article class="container-marked-tasks">
-   <p>vazio</p>
+<section>
+  <article class="container-marked-tasks" >
+   
   </article>
 </section>

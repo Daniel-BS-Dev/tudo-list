@@ -6,12 +6,13 @@ import { CrudService } from '../crud.service';
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
-  styleUrls: ['./add-task.component.css'],
+  styleUrls: ['./add-task.component.scss'],
 })
 export class AddTaskComponent implements OnInit {
 
   addTask: boolean = true;
   isEmpty: string = 'a';
+  hasDate =  'a';
 
   task: MyTask = {
     text: '',
@@ -31,6 +32,11 @@ export class AddTaskComponent implements OnInit {
   newTask(): void {
     this.isEmpty = this.task.text;
     if(this.isEmpty == ''){
+      return;
+    }
+
+    this.hasDate = String(this.task.date);
+    if (this.task.date == '') {
       console.log('esta vazio')
       return;
     }
@@ -39,8 +45,13 @@ export class AddTaskComponent implements OnInit {
       this.task = { ...this.task, title: 'Sem titulo' };
     }
 
+   
+
     this.crudService.newTask(this.task).subscribe(() => {
-      window.location.reload();
+      this.crudService.showMessage("Tarefa Criada");
+      setTimeout(() => {
+        location.reload();
+      }, 500);
     });
     this.cleanInput();
   }

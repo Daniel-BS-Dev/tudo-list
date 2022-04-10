@@ -59,14 +59,15 @@
   .closeMenu{
     display: flex;
     justify-content: end;
-   
+    border-bottom: 1px solid #f5f2f2;
+    margin-bottom: 30px;
   }
 
   .closeMenu b{
-    width: 60px;
     text-align: center;
     font-size: 22px;
     background: brown;
+    padding:5px 20px;
     color: aliceblue;
     border-top:1px solid #000;
     border-left:1px solid #000;
@@ -147,9 +148,13 @@
     
   }
 
-  li.active a,
-  li.active b{
+  li.active a, 
+  li.active .icons-home{
     color: black;
+  }
+
+  .icons-home{
+    color: white;
   }
 
   .hideMenu {
@@ -242,8 +247,9 @@
     text-transform: uppercase;
     font-family:'Helvetica Neue';
     font-size: 14px;
-    padding: 5px;
+    padding: 10px;
     border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
     color: #eee;
     z-index: 11;
     
@@ -255,6 +261,13 @@
 
   }
 
+  
+  .closeMenu{
+    border-bottom:none;
+    margin-bottom: 5px;
+  }
+
+  
   .closeMenu b{
    display: none;
   }

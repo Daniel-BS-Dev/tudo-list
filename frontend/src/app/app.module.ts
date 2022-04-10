@@ -9,6 +9,7 @@ import { AddTaskComponent } from './views/crud-task/add-task/add-task.component'
 import { MarkTasksComponent } from './views/crud-task/mark-tasks/mark-tasks.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { LOCALE_ID, NgModule } from '@angular/core';
 import localePT from '@angular/common/locales/pt';
@@ -17,6 +18,8 @@ import { ViewNewTaskComponent } from './views/crud-task/view-new-task/view-new-t
 import { UpdateTaskComponent } from './views/crud-task/update-task/update-task.component';
 import { ViewAddTaskComponent } from './views/crud-task/add-task/view-add-task/view-add-task.component';
 import { ViewAllMarkedTasksComponent } from './views/crud-task/mark-tasks/view-all-marked-tasks/view-all-marked-tasks.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 registerLocaleData(localePT);
 
 
@@ -38,7 +41,10 @@ registerLocaleData(localePT);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule, 
+    MatIconModule
   
   ],
   providers: [

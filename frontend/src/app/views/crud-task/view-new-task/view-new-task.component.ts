@@ -1,17 +1,18 @@
 import { CrudService } from '../crud.service';
 import { Component, OnInit, Output } from '@angular/core';
 import { MyTask } from 'src/app/views/crud-task/models/task';
+import { MarkService } from '../mark-tasks/mark.service';
 
 @Component({
   selector: 'app-view-new-task',
   templateUrl: './view-new-task.component.html',
-  styleUrls: ['./view-new-task.component.css'],
+  styleUrls: ['./view-new-task.component.scss'],
 })
 export class ViewNewTaskComponent implements OnInit {
   task: MyTask;
   listTask: MyTask[] = [];
 
-  constructor(private service: CrudService) {
+  constructor(private service: CrudService, private serviceMarkTask: MarkService) {
     this.task = {
       id: 0,
       title: 'Sem título',
@@ -34,33 +35,14 @@ export class ViewNewTaskComponent implements OnInit {
       return;
     }
     this.service.delete((this.task.id = id)).subscribe(() => {
-      //this.service.showMessage("Produto Deletado");
-
+      this.service.showMessage("Tarefa Deletada");
       setTimeout(() => {
         location.reload();
-      }, 500);
+      }, 1000);
     });
   }
 
   onIsMark(isMark: boolean, id: number) {
-    this.listTask.forEach((x) => {
-      if (id == x.id) {
-        let mark = (x.isMark = !isMark);
-        let text = x.text;
-        let title = x.title;
-        let date = x.date;
-
-        this.task = {
-          id: id,
-          title: title,
-          text: text,
-          isMark: mark,
-          date: date,
-        };
-        this.service.updateTask(this.task).subscribe(() => {
-          console.log(this.task, id, mark);
-        });
-      }
-    });
+    this.serviceMarkTask.onIsMark(isMark, id, this.listTask);
   }
 }

@@ -27,4 +27,20 @@ button{
     background: unset;
 }
 
+.msg-success{
+    background:#0b571d;
+    opacity: 0.6;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #FFF;
+}
 
+.msg-error{
+    background: darkred;
+    color: #FFF;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

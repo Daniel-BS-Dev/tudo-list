@@ -28,11 +28,16 @@
         ></textarea>
         <div *ngIf="task.text == ''" class="isEmpty">Esse campo não deve ser vazio!</div>
       </div>
-      <input
+       <input
+        mat-raised-button
         type="submit"
         value="salvar"
         class="btn btn-primary"
       />
+     
+      <!--
+         <button  mat-raised-button (click)="updateTask()" >Atualizar</button>
+       -->
     </form>
   </article>
 </section>
