@@ -11,8 +11,8 @@ import { CrudService } from '../crud.service';
 export class AddTaskComponent implements OnInit {
 
   addTask: boolean = true;
-  isEmpty: string = 'a';
-  hasDate =  'a';
+  emptyInput: boolean = false;
+  emptyDate: boolean = false;
 
   task: MyTask = {
     text: '',
@@ -30,34 +30,47 @@ export class AddTaskComponent implements OnInit {
   }
 
   newTask(): void {
-    this.isEmpty = this.task.text;
-    if(this.isEmpty == ''){
+    
+    if (this.task.text == '') {
+      this.emptyInput = true;
       return;
     }
 
-    this.hasDate = String(this.task.date);
     if (this.task.date == '') {
-      console.log('esta vazio')
+      this.emptyDate = true;
       return;
     }
 
-      if (this.task.title == '') {
+    if (this.task.title == '') {
       this.task = { ...this.task, title: 'Sem titulo' };
     }
-
    
 
     this.crudService.newTask(this.task).subscribe(() => {
       this.crudService.showMessage("Tarefa Criada");
-      setTimeout(() => {
-        location.reload();
-      }, 500);
+     setTimeout(() => {
+       location.reload();
+     }, 500);
     });
+    
     this.cleanInput();
+  
+  }
+
+  onClickDate(){
+    this.emptyDate = false;
+  }
+
+  onKeyUp(){
+    this.emptyInput = false;
+   
   }
 
   cleanInput() {
+    this.task.title = '';
     this.task.text = '';
     this.task.date = '';
   }
+
+
 }

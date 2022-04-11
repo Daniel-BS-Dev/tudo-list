@@ -33,6 +33,6 @@ export class MarkTasksComponent implements OnInit {
 
   onIsMark(mark: boolean, id:number){
     this.serviceMarkTask.onIsMark(mark, id, this.listTask);
-    this.service.showMessage("Tarefa Desmarcada")
+    this.service.showMessage("Tarefa Removida")
   }
 }

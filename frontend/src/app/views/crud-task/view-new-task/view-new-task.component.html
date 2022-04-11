@@ -5,8 +5,8 @@
       <button (click)="onIsMark(task.isMark!, task.id!)" [class.button-dismark]="task.isMark == true" class="button-mark">
         <strong class="material-icons-outlined"> done </strong>
       </button>
-      <div *ngIf="task.isMark == false">marcar tarefa</div>
-      <div *ngIf="task.isMark == true">desmarcar tarefa</div>
+      <div *ngIf="task.isMark == false">Adicionar a finalizadas</div>
+      <div *ngIf="task.isMark == true" [class.removeFinished]="task.isMark == true">remover de finalizadas</div>
     </div>
      <div class="div-info-form" [class.background-green]="task.isMark == true">
       <h3 [class.text-through]="task.isMark == true">{{ task.title }}</h3>
@@ -24,7 +24,7 @@
         </button>
       </a>
       <button
-        (click)="deleteTask(task.id!)"
+        (click)="deleteTask(task.id!, task.title!)"
         class="btn btn-danger"
         title="Click para deletar tarefa"
       >

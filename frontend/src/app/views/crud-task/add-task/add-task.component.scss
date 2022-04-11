@@ -108,8 +108,15 @@
   
   }
 
-  .textarea-vazio{
-    color: red;
+  .invalidDate{
+     padding:0px 20px;
+     color:#842029;
+     background: #f8d7da;
+    
+  }
+
+  .has-error, .invalidDate{
+    border: 1px solid tomato;
   }
 }
 @media screen and (min-width: 576px) {

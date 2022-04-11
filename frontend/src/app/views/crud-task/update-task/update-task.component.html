@@ -25,6 +25,7 @@
           cols="15"
           rows="3"
           class="form-control input-text"
+          [class.borderIsEmpty]="task.text == ''"
         ></textarea>
         <div *ngIf="task.text == ''" class="isEmpty">Esse campo não deve ser vazio!</div>
       </div>

@@ -25,29 +25,34 @@
         <div class="div-buttons">
           <div class="container-calendar">
             <div class="calendar">
+          
               <input
                 type="datetime-local"
                 name="date"
                 [(ngModel)]="task.date"
+                (click)="onClickDate()"
               />
               <span class="material-icons-outlined image">
                 calendar_month
               </span>
             </div>
           </div>
-         
         </div>
-        <div *ngIf="hasDate == ''" class="textarea-vazio">Preencha o Campo Data</div>
+        <div *ngIf="emptyDate == true" [class.invalidDate]="emptyDate == true" >Escolha uma data</div>
       </div>
       <textarea
         name="text"
+        #validator="ngModel"
         [(ngModel)]="task.text"
+        required
         cols="15"
         rows="3"
         placeholder="ESCREVA AQUI..."
-        class="form-control input-text"
+        class="form-control input-text" 
+        (keyup)="onKeyUp()"
+        [class.has-error]="emptyInput == true"
       ></textarea>
-      <div *ngIf="isEmpty == ''" class="textarea-vazio">Esse campo é obrigatório!</div>
+      <div *ngIf="emptyInput == true" class="alert alert-danger" role="alert">Esse campo é obritogório.</div>
       <div class="container-send-value">
         <input
           type="submit"

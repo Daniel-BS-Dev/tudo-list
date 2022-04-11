@@ -28,8 +28,8 @@ export class ViewNewTaskComponent implements OnInit {
     });
   }
 
-  deleteTask(id: number): void {
-    const deleteProduct = window.confirm(`Deletar Produto de id ${id}`);
+  deleteTask(id: number, title: string): void {
+    const deleteProduct = window.confirm(`Deletar Tarefa de Título ${title}`);
 
     if (!deleteProduct) {
       return;
