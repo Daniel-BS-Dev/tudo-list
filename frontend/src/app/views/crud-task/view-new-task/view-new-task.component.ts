@@ -29,7 +29,7 @@ export class ViewNewTaskComponent implements OnInit {
   }
 
   deleteTask(id: number, title: string): void {
-    const deleteProduct = window.confirm(`Deletar Tarefa de Título ${title}`);
+    const deleteProduct = window.confirm(`Deletar Tarefa de Título. (${title})`);
 
     if (!deleteProduct) {
       return;
